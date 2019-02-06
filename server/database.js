@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 
 //Conexión de sequelize con Postgres
 
-const sequelize = new Sequelize('postgres://postgres:39842189@localhost:5432/gustekadb');
+const sequelize = new Sequelize('postgres://usuariopostgres:contraseña@localhost:5432/nombreBBDD
 
 //Autenticacion 
 sequelize.authenticate().then(()=>{
