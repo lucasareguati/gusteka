@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #platilloForm="ngForm" (ngSubmit)="addPlatillo(platilloForm)" enctype="multipart/form-data">
+            <div class="row">
+              <div class="input-field ">
+                <input type="text" name="linea" #linea="ngModel" [(ngModel)]="platilloService.selectedPlatillo.linea"
+                placeholder="Linea">
+                
+                <input type="text" name="modelo" #modelo="ngModel" [(ngModel)]="platilloService.selectedPlatillo.modelo"
+                placeholder="Modelo">
+
+                <input type="text" name="aleacion" #aleacion="ngModel" [(ngModel)]="platilloService.selectedPlatillo.aleacion"
+                placeholder="Aleación">
+
+                <input type="text" name="diametro" #diametro="ngModel" [(ngModel)]="platilloService.selectedPlatillo.diametro"
+                placeholder="Diámetro en pulgadas">
+
+                <input type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="platilloService.selectedPlatillo.descripcion"
+                placeholder="Descripción ">
+
+                <input type="text" name="stock" #stock="ngModel" [(ngModel)]="platilloService.selectedPlatillo.stock"
+                placeholder="Stock">
+
+                <input type="number" name="precio" #precio="ngModel" [(ngModel)]="platilloService.selectedPlatillo.precio"
+                placeholder="Precio">
+
+                <input type="text" name="marca" #marca="ngModel" [(ngModel)]="platilloService.selectedPlatillo.marca"
+                placeholder="Marca">
+
+                <input type="text" name="categoria" #categoria="ngModel" [(ngModel)]="platilloService.selectedPlatillo.categoria"
+                placeholder="Categoria">
+                <hr>
+                
+                <input type="file" accept=".png, .jpg, .jpeg"  (change)="onUpload($event)">
+                <input style="display: none" type="text" name="imagen" #imagenPlatillo [value]="(urlImage | async)" [(ngModel)]="platilloService.selectedPlatillo.imagen" 
+                placeholder="URL de imagen">
+                
+                <hr>
+
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) + '%'">
+                  </div>
+                </div>
+
+                <!--<style="display: none"input type="text" name="imagen" #imagen="ngModel" [(ngModel)]="platilloService.selectedPlatillo.imagen"> -->
+                
+                </div>
+                <div class="card-action">
+                  <div class="input-field col-s12">
+                    <button class="btn blue" (click)="limpiarForm(platilloForm)">Limpiar</button>
+                    <button class="btn right green">Guardar</button>
+                  </div>
+                </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="col s7"></div>
+  </div>
+</div>
+
+<!--
+<div class="form-group">
+  <h5>Seleccione imagen: </h5>
+  <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+  <input type="text" [value]="urlImage | async">
+</div>
+-->

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card" *ngFor="let platillo of platilloService.platillos">
+      <div class="card-image">
+        <img src="{{platillo.imagen}}">
+        <span class="card-title text-dark">{{platillo.precio}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{platillo.modelo}}, {{platillo.aleacion}}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ver más</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+{
+  "name": "gustekafinal",
+  "version": "1.0.0",
+  "description": "Trabajo Final de la materia Taller de integración",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Areguati, Martiniano Olivera y Mateo Rogatky",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/fire": "^5.1.1",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.13.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "pg": "^7.8.0",
+    "rxjs": "^6.4.0",
+    "sequelize": "^4.42.0"
+  }
+}
