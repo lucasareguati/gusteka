@@ -11,5 +11,5 @@ export class Page404Component implements OnInit {
 
   ngOnInit() {
   }
-
+ 
 }

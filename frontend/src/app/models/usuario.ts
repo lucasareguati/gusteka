@@ -6,14 +6,14 @@ export class Usuario {
         nombre = '',
         codigopostal= '',
         dni= null,
-        contraseña= '',
+        contrasenia= '',
         email= '',
         tel= null) {
             this.id_usuario = id_usuario;
             this.nombre_usuario = nombre_usuario;
             this.nombre = nombre;
             this.codigopostal = codigopostal;
-            this.contraseña = contraseña;
+            this.contrasenia = contrasenia;
             this.dni = dni;
             this.email = email;
             this.tel = tel;
@@ -23,7 +23,7 @@ export class Usuario {
     nombre_usuario: string;
     nombre: string;
     codigopostal: string;
-    contraseña: string;
+    contrasenia: string;
     dni: number;
     email: string;
     tel: number;

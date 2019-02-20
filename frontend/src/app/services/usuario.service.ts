@@ -15,7 +15,7 @@ export class UsuarioService {
   usuarios: Usuario[];
   selectedUsuario: Usuario;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.selectedUsuario = new Usuario();
   }
 
@@ -23,12 +23,12 @@ export class UsuarioService {
     return this.http.get(this.URL_API);
   }
 
-  postUsuario(usuario: Usuario){
+  postUsuario(usuario: Usuario) {
     return this.http.post(this.URL_API, usuario);
   }
 
   putUsuario(usuario: Usuario) {
-    return this.http.put(this.URL_API + `${usuario.id_usuario}`, usuario)
+    return this.http.put(this.URL_API + `${usuario.id_usuario}`, usuario);
   }
 
 

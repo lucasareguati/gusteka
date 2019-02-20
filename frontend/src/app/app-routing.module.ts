@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', component: PrincipalPlatilloComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin/cargar-platillo', component: CargarPlatilloComponent },
-  { path: 'platillo/:id', component: DetallePlatilloComponent},
+  { path: 'platillo/:id', component: DetallePlatilloComponent}, // platillo/:id
   { path: 'user/login', component: LoginComponent },
   { path: 'user/register', component: RegisterComponent},
   { path: 'user/profile', component: ProfileComponent}, // solo auth

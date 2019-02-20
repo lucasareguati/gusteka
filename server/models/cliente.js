@@ -8,7 +8,7 @@ const cliente = sequelize.define('cliente',{
     },
     nombre_usuario: Sequelize.TEXT,
     nombre: Sequelize.TEXT,
-    contraseña: Sequelize.TEXT, 
+    contrasenia: Sequelize.TEXT, 
     codigopostal: Sequelize.TEXT,
     dni: Sequelize.INTEGER,
     email: Sequelize.TEXT,

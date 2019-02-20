@@ -7,7 +7,6 @@ import {AngularFireStorage} from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-
 declare var M:  any;
 
 @Component({

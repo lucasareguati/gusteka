@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PlatilloService } from '../../../services/platillo.service';
+import { Platillo } from 'src/app/models/platillo';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-detalle-platillo',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetallePlatilloComponent implements OnInit {
 
-  constructor() { }
+  platillo: Platillo;
+  idPlato: string;
+
+  constructor(private platilloService: PlatilloService, private activatedRoute: ActivatedRoute) {
+ //    this.activatedRoute.params.subscribe( async(params) => {
+ //    this.platillo =  await this.platilloService.getPlatillo(params['id']);
+ //    console.log(this.platillo);
+
+ // });
+  }
+
+
 
   ngOnInit() {
+    this.idPlato = this.activatedRoute.snapshot.paramMap.get('id');
+    this.platilloService.getPlatillo('/' + this.idPlato).subscribe(res =>{
+      this.platilloService.platillo = res as Platillo;
+      console.log(this.platilloService.platillo);
+    });
   }
 
 }

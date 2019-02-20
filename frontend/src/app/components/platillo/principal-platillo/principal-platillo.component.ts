@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PlatilloService } from '../../../services/platillo.service';
 import { Platillo } from 'src/app/models/platillo';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-principal-platillo',
@@ -11,7 +13,7 @@ import { Platillo } from 'src/app/models/platillo';
 })
 export class PrincipalPlatilloComponent implements OnInit {
 
-  constructor(private platilloService: PlatilloService) { }
+  constructor(private platilloService: PlatilloService, private router: Router) { }
 
   ngOnInit() {
     this.getPlatillos();
@@ -24,4 +26,8 @@ export class PrincipalPlatilloComponent implements OnInit {
     });
   }
 
+  verPlatillo(idx: string) {
+    this.router.navigate( ['/platillo', idx]);
+
+  }
 }

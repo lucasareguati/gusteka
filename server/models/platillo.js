@@ -25,4 +25,5 @@ const platillo = sequelize.define('platillo',{
 
 
 
+
 module.exports = platillo;

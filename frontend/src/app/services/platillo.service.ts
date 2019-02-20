@@ -10,6 +10,7 @@ export class PlatilloService {
 
   readonly URL_API = 'http://localhost:3000/platillo';
 
+  platillo: Platillo;
   platillos: Platillo[];
   selectedPlatillo: Platillo;
 
@@ -32,6 +33,9 @@ export class PlatilloService {
   deletePlatillo(id_platillo: string) {
     return this.http.delete(this.URL_API + `${id_platillo}`);
 
+  }
+  getPlatillo(id_platillo: string) {
+    return this.http.get(this.URL_API + `${id_platillo}`);
   }
 
 }

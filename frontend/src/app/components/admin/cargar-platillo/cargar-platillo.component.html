@@ -33,7 +33,6 @@
                 <input type="text" name="categoria" #categoria="ngModel" [(ngModel)]="platilloService.selectedPlatillo.categoria"
                 placeholder="Categoria">
                 <hr>
-                
                 <input type="file" accept=".png, .jpg, .jpeg"  (change)="onUpload($event)">
                 <input style="display: none" type="text" name="imagen" #imagenPlatillo [value]="(urlImage | async)" [(ngModel)]="platilloService.selectedPlatillo.imagen" 
                 placeholder="URL de imagen">
@@ -43,11 +42,9 @@
                 <div class="progress">
                   <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadPercent | async) + '%'">
                   </div>
+                </div> 
                 </div>
-
-                <!--<style="display: none"input type="text" name="imagen" #imagen="ngModel" [(ngModel)]="platilloService.selectedPlatillo.imagen"> -->
                 
-                </div>
                 <div class="card-action">
                   <div class="input-field col-s12">
                     <button class="btn blue" (click)="limpiarForm(platilloForm)">Limpiar</button>

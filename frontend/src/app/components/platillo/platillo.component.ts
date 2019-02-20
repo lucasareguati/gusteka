@@ -17,7 +17,7 @@ export class PlatilloComponent implements OnInit {
   constructor(private platilloService: PlatilloService) { }
 
   ngOnInit() {
-    this.getPlatillos();
+    // this.getPlatillos();
   }
 
   addPlatillo(form: NgForm) {

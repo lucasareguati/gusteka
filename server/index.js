@@ -2,21 +2,38 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const {sequelize} = require('./database');
+const passport = require('passport');
+const flash = require('connect-flash');
+const session = require('express-session');
+var bodyParser = require('body-parser');
+const coockieParser = require('cookie-parser');
+
 
 var app = express(); 
 
-var bodyParser = require('body-parser');
+
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 app.use(cors({origin: 'http://localhost:4200'}));
+// require('./config/passport')(passport);
 
 //Settings
 app.set('port', process.env.PORT || 3000 );
 app.set(express.json());
 
+
 //Middlewares
 app.use(morgan('dev'));
+app.use(coockieParser());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(session({
+    secret: 'gusteka',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 
 
