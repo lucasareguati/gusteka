@@ -37,5 +37,4 @@ export class PlatilloService {
   getPlatillo(id_platillo: string) {
     return this.http.get(this.URL_API + `${id_platillo}`);
   }
-
 }

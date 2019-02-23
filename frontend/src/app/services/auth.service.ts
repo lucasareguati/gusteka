@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 import { auth } from 'firebase/app';
 import { map } from 'rxjs/operators';
+import { UsuarioService} from './usuario.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 
 export class AuthService {
 
-  constructor(private afsAuth: AngularFireAuth) { }
+  constructor(private afsAuth: AngularFireAuth, private userS: UsuarioService) { }
 
   registerUser() {}
 
@@ -33,7 +34,8 @@ export class AuthService {
   }
 
   logoutUser() {
-    return this.afsAuth.auth.signOut();
+     return this.afsAuth.auth.signOut();
+
   }
 
 

@@ -9,7 +9,11 @@ clienteCtrl.getUsuarios = async (req, res) => {
 }
 
 clienteCtrl.getUsuario = async (req, res) => {
-    const usuario = await Cliente.findById(req.params.id);
+    const usuario = await Cliente.findAll({
+        where: {
+            email: req.params.email
+        }
+    });
     res.json(usuario);
 }
 

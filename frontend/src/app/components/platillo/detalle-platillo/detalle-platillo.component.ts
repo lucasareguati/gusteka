@@ -15,21 +15,14 @@ export class DetallePlatilloComponent implements OnInit {
   idPlato: string;
 
   constructor(private platilloService: PlatilloService, private activatedRoute: ActivatedRoute) {
- //    this.activatedRoute.params.subscribe( async(params) => {
- //    this.platillo =  await this.platilloService.getPlatillo(params['id']);
- //    console.log(this.platillo);
-
- // });
   }
 
 
 
   ngOnInit() {
     this.idPlato = this.activatedRoute.snapshot.paramMap.get('id');
-    this.platilloService.getPlatillo('/' + this.idPlato).subscribe(res =>{
+    this.platilloService.getPlatillo('/' + this.idPlato).subscribe(res => {
       this.platilloService.platillo = res as Platillo;
-      console.log(this.platilloService.platillo);
     });
   }
-
 }

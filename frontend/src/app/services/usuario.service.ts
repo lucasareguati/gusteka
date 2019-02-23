@@ -12,15 +12,17 @@ export class UsuarioService {
 
   readonly URL_API = 'http://localhost:3000/usuario';
 
-  usuarios: Usuario[];
+  usuarioLogueado: Usuario;
+  // usuarios: Usuario[];
   selectedUsuario: Usuario;
+
 
   constructor(private http: HttpClient) {
     this.selectedUsuario = new Usuario();
   }
 
-  getUsuarios() {
-    return this.http.get(this.URL_API);
+  getUsuario(correo: string) {
+    return this.http.get(this.URL_API + `${correo}`);
   }
 
   postUsuario(usuario: Usuario) {

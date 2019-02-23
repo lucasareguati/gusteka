@@ -14,10 +14,10 @@ export class Usuario {
             this.nombre = nombre;
             this.codigopostal = codigopostal;
             this.contrasenia = contrasenia;
-            this.dni = dni;
             this.email = email;
             this.tel = tel;
-    }
+        }
+
 
     id_usuario: number;
     nombre_usuario: string;

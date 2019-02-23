@@ -6,16 +6,19 @@
       </div>
       <div class="row user-details">
         <div class="col-12">
-          <img src="{{user.photoUrl}}" class="rounded-circle img-thumbnail" alt="profile">
-          <h5 *ngIf="providerId != 'password'">{{user.name}}</h5>
+          <img src="" class="rounded-circle img-thumbnail" alt="profile">
+          <h3>{{usuario.nombre_usuario}}</h3>
           <p>
-            {{user.email}}
+            {{usuario.email}}
           </p>
+          <h4>{{usuario.nombre}}</h4>
+          <h4>{{usuario.email}}</h4>
 
           <hr>
-          <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores suscipit itaque minima quae.</span>
+          <span>{{usuario.tel}}</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
