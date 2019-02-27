@@ -11,6 +11,7 @@ platilloCtrl.getPlatillos = async (req, res) => {
 
 platilloCtrl.createPlatillo = async(req, res) => {
     const platilloCreado = req.body;
+    platilloCreado.baja = false;
     await Platillo.create(platilloCreado);
     res.send({
         status: "Guardado correctamente"
@@ -39,7 +40,8 @@ platilloCtrl.editPlatillo = async(req, res) => {
         precio: req.body.precio,
         marca: req.body.marca,
         categoria: req.body.categoria,
-        imagen: req.body.imagen    
+        imagen: req.body.imagen,
+        baja: req.body.baja    
         }
     
     await Platillo.update(platilloActualizado,{

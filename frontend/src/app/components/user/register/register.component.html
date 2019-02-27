@@ -4,31 +4,31 @@
       <div class="card ">
         <div class="card-content ">
 
-        <form #usuarioForm="ngForm" (ngSubmit)="registrarUsuario(usuarioForm)" action=""> 
+        <form class="text-center border border-light p-5" #usuarioForm="ngForm" (ngSubmit)="registrarUsuario(usuarioForm)" action=""> 
           <div class="row">
             <div class="input-field">
-            <input type="text" name="nombre_usuario" #nombre_usuario="ngModel" [(ngModel)]="usuarioService.selectedUsuario.nombre_usuario" 
+            <input type="text" class="form-control mb-4" name="nombre_usuario" #nombre_usuario="ngModel" [(ngModel)]="usuarioService.selectedUsuario.nombre_usuario" 
             placeholder="Nombre de usuario">
 
-            <input type="password" name="contrasenia" #contrasenia="ngModel" [(ngModel)]="usuarioService.selectedUsuario.contrasenia" 
+            <input type="password" class="form-control mb-4" name="contrasenia" #contrasenia="ngModel" [(ngModel)]="usuarioService.selectedUsuario.contrasenia" 
             placeholder="Password">
             
-            <input type="password" name="contraseniaVerificada" placeholder="Ingrese nuevamente la contraseña">
+            <input type="password" class="form-control mb-4" name="contraseniaVerificada" placeholder="Ingrese nuevamente la contraseña">
             
 
-            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuarioService.selectedUsuario.nombre" 
+            <input type="text" class="form-control mb-4" name="nombre" #nombre="ngModel" [(ngModel)]="usuarioService.selectedUsuario.nombre" 
             placeholder="Nombre">
 
-            <input type="email" name="email" #email="ngModel" [(ngModel)]="usuarioService.selectedUsuario.email" 
+            <input type="email" class="form-control mb-4" name="email" #email="ngModel" [(ngModel)]="usuarioService.selectedUsuario.email" 
             placeholder="Correo electronico">
 
-            <input type="text" name="codigopostal" #codigopostal="ngModel" [(ngModel)]="usuarioService.selectedUsuario.codigopostal" 
+            <input type="text" class="form-control mb-4" name="codigopostal" #codigopostal="ngModel" [(ngModel)]="usuarioService.selectedUsuario.codigopostal" 
             placeholder="Codigo postal">
 
-            <input type="number" name="dni" #dni="ngModel" [(ngModel)]="usuarioService.selectedUsuario.dni" 
+            <input type="number" class="form-control mb-4" name="dni" #dni="ngModel" [(ngModel)]="usuarioService.selectedUsuario.dni" 
             placeholder="DNI">
 
-            <input type="number" name="tel" #tel="ngModel" [(ngModel)]="usuarioService.selectedUsuario.tel" 
+            <input type="number" class="form-control mb-4" name="tel" #tel="ngModel" [(ngModel)]="usuarioService.selectedUsuario.tel" 
             placeholder="Numero de telefono">
              
             <div class="card-action">

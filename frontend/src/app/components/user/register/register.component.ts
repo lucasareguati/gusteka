@@ -12,7 +12,7 @@ import { auth } from 'firebase';
 import 'firebase/auth';
 
 
-declare var M: any;
+// declare var M: any;
 
 @Component({
   selector: 'app-register',
@@ -36,14 +36,14 @@ export class RegisterComponent implements OnInit {
       this.usuarioService.postUsuario(form.value)
         .subscribe( async res => {
           form.resetForm();
-          M.toast({html: 'Registrado correctamente'});
+          // M.toast({html: 'Registrado correctamente'});
           const user = auth().currentUser;
           user.sendEmailVerification().then( () => {
             console.log('Verifica tu correo: ', user.email);
           }).catch(err => {
             console.log('Error: ', err);
           });
-          M.toast({html: 'Verifique su email'});
+          // M.toast({html: 'Verifique su email'});
           this.authService.logoutUser();
           this.router.navigate(['/']);
     });

@@ -12,7 +12,8 @@ export class Platillo {
         precio= null,
         marca= '',
         categoria= '',
-        imagen= '') {
+        imagen= '',
+        baja= false) {
             this.id_platillo = id_platillo;
             this.linea = linea;
             this.modelo = modelo;
@@ -24,6 +25,7 @@ export class Platillo {
             this.marca = marca;
             this.categoria = categoria;
             this.imagen = imagen;
+            this.baja = baja;
         }
  
     id_platillo: number;
@@ -37,5 +39,6 @@ export class Platillo {
     marca: string;
     categoria: string;
     imagen: string;
+    baja: boolean;
 }
 

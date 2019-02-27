@@ -13,8 +13,6 @@ export class AuthService {
 
   constructor(private afsAuth: AngularFireAuth, private userS: UsuarioService) { }
 
-  registerUser() {}
-
   loginEmailUser(email: string, pass: string) {
     return new Promise((resolve, reject ) => {
       this.afsAuth.auth.signInWithEmailAndPassword(email, pass)
@@ -26,11 +24,11 @@ export class AuthService {
   }
 
   loginFacebookUser() {
-    return this.afsAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+//    return this.afsAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
   }
 
   loginGoogleUser() {
-    return this.afsAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  //  return this.afsAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
 
   logoutUser() {

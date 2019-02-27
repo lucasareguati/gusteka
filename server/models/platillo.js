@@ -13,10 +13,11 @@ const platillo = sequelize.define('platillo',{
     diametro: Sequelize.TEXT,
     descripcion: Sequelize.TEXT,
     stock: Sequelize.INTEGER,
-    precio: Sequelize.REAL,
+    precio: Sequelize.INTEGER,
     marca: Sequelize.TEXT,
     categoria: Sequelize.TEXT,
-    imagen: Sequelize.TEXT
+    imagen: Sequelize.TEXT,
+    baja: Sequelize.BOOLEAN
 },{
     tableName: "platillo",
     timestamps: false

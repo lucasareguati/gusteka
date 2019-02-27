@@ -28,6 +28,5 @@ export class PrincipalPlatilloComponent implements OnInit {
 
   verPlatillo(idx: string) {
     this.router.navigate( ['/platillo', idx]);
-
   }
 }

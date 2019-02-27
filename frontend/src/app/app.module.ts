@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlatilloComponent } from './components/platillo/platillo.component';
@@ -21,8 +20,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuth} from '@angular/fire/auth';
 import { AdminComponent } from './components/admin/admin.component';
-
-
+import { EditarPlatilloComponent } from './components/admin/editar-platillo/editar-platillo.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -40,6 +39,7 @@ import { AdminComponent } from './components/admin/admin.component';
     RegisterComponent,
     DetallePlatilloComponent,
     AdminComponent,
+    EditarPlatilloComponent,
   ],
   imports: [
     FormsModule,
@@ -49,8 +49,11 @@ import { AdminComponent } from './components/admin/admin.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    MDBBootstrapModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [AngularFireAuth],
-  bootstrap: [AppComponent]
+  schemas: [NO_ERRORS_SCHEMA],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

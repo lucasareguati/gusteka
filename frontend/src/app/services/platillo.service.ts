@@ -27,7 +27,7 @@ export class PlatilloService {
   }
 
   putPlatillo(platillo: Platillo) {
-    return this.http.put(this.URL_API + `${platillo.id_platillo}`, platillo );
+    return this.http.put(this.URL_API + `/${platillo.id_platillo}`, platillo );
   }
 
   deletePlatillo(id_platillo: string) {

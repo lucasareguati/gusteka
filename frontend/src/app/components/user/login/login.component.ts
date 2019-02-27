@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 
 
-declare var M:  any; // Variable del toast
+// declare var M:  any; // Variable del toast
 
 @Component({
   selector: 'app-login',
@@ -17,8 +17,10 @@ declare var M:  any; // Variable del toast
 export class LoginComponent implements OnInit {
 
   // tslint:disable-next-line:max-line-length
-  constructor(private usuarioService: UsuarioService, public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) { }
+  constructor( private usuarioService: UsuarioService, public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) { }
 
+
+  public userLogueado: Usuario = this.usuarioService.usuarioLogueado;
   public email = '';
   public pass = '';
 
@@ -36,25 +38,40 @@ export class LoginComponent implements OnInit {
 
     }).catch(err => {
       console.log('Ha ocurrido un error: ', err.message);
-      M.toast({html: err.message});
+      //  M.toast({html: err.message});
     });
   }
 
   onLoginFacebook() {
-    this.authService.loginFacebookUser().then((res) => {
-      this.router.navigate(['/']);
-      console.log(res);
-    }).catch(err => console.log('Error: ', err.message));
+    // this.authService.loginFacebookUser().then((res) => {
+     // this.router.navigate(['/']);
+      // console.log(res);
+   // }).catch(err => console.log('Error: ', err.message));
+    this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider()).then( res => {
+      console.log('Logueado correctamente con Facebook');
+    }).catch( err => {
+      console.log( 'Error: ', err);
+    });
+    this.router.navigate(['/']);
   }
 
   onLoginGoogle() {
-    this.authService.loginGoogleUser().then((res) => {
-      this.router.navigate(['/']); // Verificar
-    }).catch(err => console.log('Error: ', err.message));
+    // this.authService.loginGoogleUser().then((res) => {
+      // this.router.navigate(['/']); // Verificar
+      // console.log(auth().currentUser);
+    // }).catch(err => console.log('Error: ', err.message));
+
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(res =>  {
+      console.log('Logueado correctamente');
+    }).catch( err => {
+      console.log('Error: ', err);
+    });
+    this.router.navigate(['/']);
   }
 
   onLogoutUser() {
     this.authService.logoutUser();
+
   }
 
 }

@@ -9,12 +9,13 @@ import { Page404Component } from './components/page404/page404.component';
 import { CargarPlatilloComponent } from './components/admin/cargar-platillo/cargar-platillo.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { PrincipalPlatilloComponent } from './components/platillo/principal-platillo/principal-platillo.component';
-
+import { EditarPlatilloComponent } from './components/admin/editar-platillo/editar-platillo.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalPlatilloComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin/cargar-platillo', component: CargarPlatilloComponent },
+  { path: 'admin/editar-platillo', component: EditarPlatilloComponent },
   { path: 'platillo/:id', component: DetallePlatilloComponent}, // platillo/:id
   { path: 'user/login', component: LoginComponent },
   { path: 'user/register', component: RegisterComponent},
