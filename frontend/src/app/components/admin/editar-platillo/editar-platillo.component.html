@@ -1,6 +1,7 @@
-<h1>-Editar</h1>
 
-<table class="table table-striped">
+
+<table id="contentToConvert" class="table table-striped">
+    
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -44,10 +45,51 @@
 </table>
 
 
+<div id="content" #content> 
+    <mat-card> 
+   <div>
+    <input type="button" value="Descargar" mdbBtn color="secondary" class="waves-light" (click)="generatePDF()"/> 
+    </div> 
+    </mat-card> 
+   </div> 
 
 
-<button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
-  (click)="frame.show()" mdbWavesEffect>Launch Modal</button>
+<!--Baja-->
+
+<div mdbModal #bajaModal="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Baja platillo</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="bajaModal.hide()">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Desea dar de baja el platillo {{platilloService.selectedPlatillo.linea}}, {{platilloService.selectedPlatillo.modelo}}, {{platilloService.selectedPlatillo.aleacion}}, {{platilloService.selectedPlatillo.aleacion}}", {{platilloService.selectedPlatillo.diametro}}</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="bajaModal.hide()" mdbWavesEffect>Cancelar</button>
+          <button mdbBtn  type="button"  (click)="bajaOAltaPlatillo()" (click)="bajaModal.hide()" class="btn right relative green" >Dar de baja</button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+
+
+
 
 <div mdbModal #frame="mdbModal" style="overflow-y: auto" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
   aria-labelledby="myModalLabel" aria-hidden="true">
@@ -125,39 +167,7 @@
 </div>
 
 
-<!--Baja-->
 
-<div mdbModal #bajaModal="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-notify modal-danger" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      <div class="modal-header">
-        <p class="heading lead">Baja platillo</p>
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="bajaModal.hide()">
-          <span aria-hidden="true" class="white-text">&times;</span>
-        </button>
-      </div>
-
-      <!--Body-->
-      <div class="modal-body">
-        <div class="text-center">
-          <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
-          <p>Desea dar de baja el platillo {{platilloService.selectedPlatillo.linea}}, {{platilloService.selectedPlatillo.modelo}}, {{platilloService.selectedPlatillo.aleacion}}, {{platilloService.selectedPlatillo.aleacion}}", {{platilloService.selectedPlatillo.diametro}}</p>
-        </div>
-      </div>
-
-      <!--Footer-->
-      <div class="modal-footer justify-content-center">
-          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="bajaModal.hide()" mdbWavesEffect>Cancelar</button>
-          <button mdbBtn  type="button"  (click)="bajaOAltaPlatillo()" (click)="bajaModal.hide()" class="btn right relative green" >Dar de baja</button>
-      </div>
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
 
 
 <!--AltaModal-->

@@ -22,6 +22,7 @@ import { AngularFireAuth} from '@angular/fire/auth';
 import { AdminComponent } from './components/admin/admin.component';
 import { EditarPlatilloComponent } from './components/admin/editar-platillo/editar-platillo.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -40,6 +41,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     DetallePlatilloComponent,
     AdminComponent,
     EditarPlatilloComponent,
+    FooterComponent,
   ],
   imports: [
     FormsModule,
