@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PlatilloService } from '../../../services/platillo.service';
 import { Platillo } from 'src/app/models/platillo';
 import { ActivatedRoute } from '@angular/router';
+import { ConsultaService } from '../../../services/consulta.service';
+import { Consulta } from 'src/app/models/consulta';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -17,7 +19,7 @@ export class DetallePlatilloComponent implements OnInit {
   constructor(private platilloService: PlatilloService, private activatedRoute: ActivatedRoute) {
   }
 
-
+ 
 
   ngOnInit() {
     this.idPlato = this.activatedRoute.snapshot.paramMap.get('id');
@@ -25,4 +27,13 @@ export class DetallePlatilloComponent implements OnInit {
       this.platilloService.platillo = res as Platillo;
     });
   }
+
+
+
+
+
+
+
+  
 }
+

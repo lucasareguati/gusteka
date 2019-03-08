@@ -40,6 +40,7 @@ app.use(passport.session());
 //Routes
 app.use('/platillo', require('./routes/platillo.routes'));
 app.use('/usuario', require('./routes/cliente.routes'));
+app.use('/consulta', require('./routes/consulta.routes'));
 
 app.listen(app.get('port') , () => {
     console.log('Server on port ' + app.get('port'));
