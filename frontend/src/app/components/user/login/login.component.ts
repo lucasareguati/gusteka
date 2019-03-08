@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
    // }).catch(err => console.log('Error: ', err.message));
     this.afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider()).then( res => {
       console.log('Logueado correctamente con Facebook');
+      this.verificar();
     }).catch( err => {
       console.log( 'Error: ', err);
     });
@@ -63,11 +64,35 @@ export class LoginComponent implements OnInit {
 
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(res =>  {
       console.log('Logueado correctamente');
+      this.verificar();
     }).catch( err => {
       console.log('Error: ', err);
     });
     this.router.navigate(['/']);
   }
+
+  verificar() { // Si ya inicio sesion lo trae de la BBDD sino lo registra
+    const user = auth().currentUser;
+      console.log(user.displayName, user.email);
+      this.usuarioService.getUsuario('/' + user.email).subscribe( res => {
+        this.usuarioService.usuarioLogueado = res[0] as Usuario;
+
+        if (res[0] === undefined) { // no esta registrado en BBDD
+          const usuario = new Usuario;
+          usuario.email = user.email;
+          usuario.nombre = user.displayName;
+          usuario.nombre_usuario = user.displayName;
+          this.usuarioService.usuarioLogueado = usuario;
+          console.log(usuario);
+          this.usuarioService.postUsuario(usuario).subscribe( res => {
+            console.log('CORRECTAMENTE');
+          });
+        }
+      });
+  }
+
+
+
 
   onLogoutUser() {
     this.authService.logoutUser();

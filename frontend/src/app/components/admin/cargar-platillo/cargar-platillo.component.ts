@@ -15,7 +15,7 @@ declare var M:  any;
   styleUrls: ['./cargar-platillo.component.css'],
   providers: [PlatilloService
   ]
-
+ 
 })
 export class CargarPlatilloComponent implements OnInit {
   selectedFile = null;
