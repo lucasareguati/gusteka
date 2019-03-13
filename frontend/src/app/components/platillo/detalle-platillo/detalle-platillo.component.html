@@ -1,5 +1,6 @@
 <section class="ui-view-more vip-section-specs main-section">
     <h2 class="main-section__title">
+         Descripción de platillo:
     </h2>
       
       <div class="description-content-main-group attribute-content">
@@ -18,7 +19,7 @@
               <strong>Linea</strong>
               <span> {{platilloService.platillo?.linea}}</span>
             </li>
-            
+                   
             <li class="specs-item">
               <strong>Modelo</strong>
               <span> {{platilloService.platillo?.modelo}}</span>
@@ -59,16 +60,12 @@
 
           </section>
           
-<hr>
-<section>
-<h3>¿Querés preguntar algo?</h3>
 
-<!--Material textarea-->
-<div class="md-form md-outline" align="right">
-  <textarea type="text" id="form75" class="form-control md-textarea" rows="3" mdbInput name="consultaTexto" #consultaTexto="ngModel" [(ngModel)]="consultaService.selectedConsulta.consulta"></textarea>
-  <label for="form75">Escribí una pregunta...</label>
-  <button type="click" (click)="preguntar(consultaTexto)" class="btn btn-primary btn-md mt-0 ml-auto">Preguntar</button>
-</div>
+<section>
+<h3>¿Queres preguntar algo?</h3>
+
+
+
 
 </section>
 
@@ -76,19 +73,18 @@
 
 
 <section>
-    
-<h3>Ultimas preguntas</h3>
-  <mdb-card *ngFor="let consulta of consultaService.consultas" style="margin-bottom: 5px">
+<h3>Preguntas</h3>
+  <mdb-card>
     <mdb-card-body>
       
       <mdb-card-title>
-        <h5>{{consulta.id_usuario}}</h5>
+        <h5>Nombre de usuario</h5>
       </mdb-card-title>
       
       <mdb-card-text>
-        {{consulta.consulta}}
+        Hola, queria saber cuanto tarda en llegar hasta palermo si lo compro hoy. Y cuantos tenes disponibles. Gracias
       </mdb-card-text>
-      <p>{{consulta.respuesta}}</p>
+      <p>       Hola si lo compras hoy te llega en unas 5 horas, saludos! GustekaDrums.</p>
 
       
 

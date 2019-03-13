@@ -22,7 +22,7 @@ export class ConsultaService {
    }
 
    postConsulta(consulta: Consulta) {
-     return this.http.post(this.URL_API, consulta);
+     return this.http.post(this.URL_API + `${consulta.id_consulta}`, consulta);
    }
 
    putConsulta(consulta: Consulta) {

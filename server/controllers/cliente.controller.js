@@ -7,7 +7,7 @@ clienteCtrl.getUsuarios = async (req, res) => {
     const clientes = await Cliente.findAll();
     res.json(clientes);
 }
- 
+
 clienteCtrl.getUsuario = async (req, res) => {
     const usuario = await Cliente.findAll({
         where: {
